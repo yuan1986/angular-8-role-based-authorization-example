@@ -1,8 +1,8 @@
 ﻿import { Component } from '@angular/core';
 import { first } from 'rxjs/operators';
 
-import { User } from '@app/_models';
-import { UserService, AuthenticationService } from '@app/_services';
+import { User } from '@app/models';
+import { UserService, AuthenticationService } from '@app/services';
 
 @Component({ templateUrl: 'home.component.html' })
 export class HomeComponent {
@@ -17,6 +17,7 @@ export class HomeComponent {
         this.currentUser = this.authenticationService.currentUserValue;
     }
 
+    // tslint:disable-next-line: use-lifecycle-interface
     ngOnInit() {
         this.loading = true;
         this.userService.getById(this.currentUser.id).pipe(first()).subscribe(user => {
