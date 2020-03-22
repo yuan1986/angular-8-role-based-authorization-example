@@ -48,7 +48,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 token: `fake-jwt-token.${user.id}`
             });
         }
-        s
+
         function getUsers() {
             if (!isAdmin()) { return unauthorized(); }
             return ok(users);
@@ -63,7 +63,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             return ok(user);
         }
 
-        function ok(body) {
+        // tslint:disable-next-line: no-shadowed-variable
+        function ok(body: any) {
             return of(new HttpResponse({ status: 200, body }));
         }
 
