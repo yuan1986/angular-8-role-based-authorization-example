@@ -1,4 +1,4 @@
-﻿import { Injectable } from "@angular/core";
+﻿import { Injectable } from '@angular/core';
 import {
   HttpRequest,
   HttpResponse,
@@ -6,27 +6,27 @@ import {
   HttpEvent,
   HttpInterceptor,
   HTTP_INTERCEPTORS
-} from "@angular/common/http";
-import { Observable, of, throwError } from "rxjs";
-import { delay, mergeMap, materialize, dematerialize } from "rxjs/operators";
+} from '@angular/common/http';
+import { Observable, of, throwError } from 'rxjs';
+import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
-import { User, Role } from "@app/models";
+import { User, Role } from '@app/models';
 
 const users: User[] = [
   {
     id: 1,
-    username: "admin",
-    password: "admin",
-    firstName: "Admin",
-    lastName: "User",
+    username: 'admin',
+    password: 'admin',
+    firstName: 'Admin',
+    lastName: 'User',
     role: Role.Admin
   },
   {
     id: 2,
-    username: "user",
-    password: "user",
-    firstName: "Normal",
-    lastName: "User",
+    username: 'user',
+    password: 'user',
+    firstName: 'Normal',
+    lastName: 'User',
     role: Role.User
   }
 ];
@@ -47,11 +47,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     function handleRoute() {
       switch (true) {
-        case url.endsWith("/users/authenticate") && method === "POST":
+        case url.endsWith('/users/authenticate') && method === 'POST':
           return authenticate();
-        case url.endsWith("/users") && method === "GET":
+        case url.endsWith('/users') && method === 'GET':
           return getUsers();
-        case url.match(/\/users\/\d+$/) && method === "GET":
+        case url.match(/\/users\/\d+$/) && method === 'GET':
           return getUserById();
         default:
           return next.handle(request);
@@ -64,7 +64,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         x => x.username === username && x.password === password
       );
       if (!user) {
-        return error("Username or password is incorrect");
+        return error('用户名或密码不正确');
       }
       return ok({
         id: user.id,
@@ -102,7 +102,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function unauthorized() {
-      return throwError({ status: 401, error: { message: "unauthorized" } });
+      return throwError({ status: 401, error: { message: 'unauthorized' } });
     }
 
     function error(message) {
@@ -110,8 +110,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
 
     function isLoggedIn() {
-      const authHeader = headers.get("Authorization") || "";
-      return authHeader.startsWith("Bearer fake-jwt-token");
+      const authHeader = headers.get('Authorization') || '';
+      return authHeader.startsWith('Bearer fake-jwt-token');
     }
 
     function isAdmin() {
@@ -122,12 +122,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
       if (!isLoggedIn()) {
         return;
       }
-      const id = parseInt(headers.get("Authorization").split(".")[1], 10);
+      const id = parseInt(headers.get('Authorization').split('.')[1], 10);
       return users.find(x => x.id === id);
     }
 
     function idFromUrl() {
-      const urlParts = url.split("/");
+      const urlParts = url.split('/');
       return parseInt(urlParts[urlParts.length - 1], 10);
     }
   }

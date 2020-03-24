@@ -1,47 +1,48 @@
-﻿<div class="col-md-6 offset-md-3 mt-5">
-  <div class="alert alert-info">
-    <strong>Normal User</strong> - U: user P: user<br />
-    <strong>Administrator</strong> - U: admin P: admin
-  </div>
-  <div class="card">
-    <h4 class="card-header">Welcome</h4>
-    <div class="card-body">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input
-            type="text"
-            formControlName="username"
-            class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
-          />
-          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-          </div>
+﻿<div class="main_top">
+  <div class="main_top_logo"></div>
+</div>
+<div class="main_content">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="login_content">
+      <h1 class="login_product_text">欢迎使用</h1>
+      <div class="user_name_content">
+        <input
+          type="text"
+          formControlName="username"
+          class="username_text_field"
+          placeholder="账号"
+          autofocus="autofocus"
+        />
+        <div *ngIf="submitted && f.username.errors" class="username_error_text">
+          账号不能为空
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            type="password"
-            formControlName="password"
-            class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-          />
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-          </div>
+      </div>
+      <div class="user_password_content">
+        <input
+          type="password"
+          formControlName="password"
+          class="password_text_field"
+          placeholder="密码"
+        />
+        <div *ngIf="submitted && f.password.errors" class="password_error_text">
+          密码不能为空
         </div>
-        <button [disabled]="loading" class="btn btn-primary">
-          <span
-            *ngIf="loading"
-            class="spinner-border spinner-border-sm mr-1"
-          ></span>
-          Login
+      </div>
+      <div
+        class="user_role_content"
+        [ngClass]="{ user_error_content: submitted && f.password.errors }"
+      >
+        <input type="checkbox" class="role_enable_field" id="checkbox1" />
+        <label for="checkbox1" class="role_text_field">系统管理员</label>
+      </div>
+      <div class="login_submit_content">
+        <button class="submit_btn" [disabled]="loading">
+          {{ loading ? "加载中..." : "登&nbsp;录" }}
         </button>
-        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">
-          {{ error }}
-        </div>
-      </form>
+      </div>
+      <div *ngIf="error" class="error_content">
+        {{ error }}
+      </div>
     </div>
-  </div>
+  </form>
 </div>
