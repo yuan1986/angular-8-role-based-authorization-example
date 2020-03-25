@@ -21,7 +21,7 @@ export class JwtInterceptor implements HttpInterceptor {
 
     if (token) {
       req = req.clone({
-        headers: req.headers.set('Authorization', `Bearer_${token}`)
+        headers: req.headers.set('Authorization', `Bearer ${token}`)
       });
     }
 
@@ -30,8 +30,6 @@ export class JwtInterceptor implements HttpInterceptor {
         headers: req.headers.set('Content-Type', 'application/json')
       });
     }
-
-    req = req.clone({ headers: req.headers.set('Accept', 'application/json') });
 
     return next.handle(req);
   }
