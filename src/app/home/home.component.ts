@@ -35,4 +35,12 @@ export class HomeComponent {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
   }
+
+  calc() {
+    alert(1);
+  }
+
+  config() {
+    alert(2);
+  }
 }
