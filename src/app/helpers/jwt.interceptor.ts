@@ -6,7 +6,6 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '@environments/environment';
 import { AuthenticationService } from '@app/services';
 
 @Injectable()
@@ -14,20 +13,26 @@ export class JwtInterceptor implements HttpInterceptor {
   constructor(private authenticationService: AuthenticationService) {}
 
   intercept(
-    request: HttpRequest<any>,
+    req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     const currentUser = this.authenticationService.currentUserValue;
-    const isLoggedIn = currentUser && currentUser.token;
-    const isApiUrl = request.url.startsWith(environment.apiUrl);
-    if (isLoggedIn && isApiUrl) {
-      request = request.clone({
-        setHeaders: {
-          Authorization: `Bearer ${currentUser.token}`
-        }
+    const token = currentUser && currentUser.token;
+
+    if (token) {
+      req = req.clone({
+        headers: req.headers.set('Authorization', `Bearer_${token}`)
       });
     }
 
-    return next.handle(request);
+    if (!req.headers.has('Content-Type')) {
+      req = req.clone({
+        headers: req.headers.set('Content-Type', 'application/json')
+      });
+    }
+
+    req = req.clone({ headers: req.headers.set('Accept', 'application/json') });
+
+    return next.handle(req);
   }
 }

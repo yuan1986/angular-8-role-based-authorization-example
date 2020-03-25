@@ -2,7 +2,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { fakeBackendProvider } from './helpers';
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './helpers';
@@ -19,8 +18,7 @@ import { LoginComponent } from './login';
   declarations: [AppComponent, HomeComponent, LoginComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-    fakeBackendProvider
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
