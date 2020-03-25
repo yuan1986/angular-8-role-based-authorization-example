@@ -17,19 +17,20 @@
   width: 100%;
   height: 75%;
   position: relative;
-  background: url("../images/login-left.svg");
+  background: url("../images/login-left.svg") 50px 0;
   background-size: 813px 405px;
   background-repeat: no-repeat;
 }
 
 .login_content {
   position: absolute;
-  right: 80px;
+  right: 15%;
   margin: 0 auto;
   background-color: #fff;
-  width: 351px;
+  width: 380px;
   height: 352px;
   padding: 30px 0 0 56px;
+  top: 3%;
 }
 
 .login_product_text {
@@ -41,14 +42,14 @@
 .user_name_content {
   color: #666;
   font-size: 16px;
-  width: 306px;
+  width: 326px;
   margin-top: 40px;
 }
 
 .user_password_content {
   color: #666;
   font-size: 16px;
-  width: 306px;
+  width: 326px;
   margin-top: 40px;
 }
 
@@ -78,7 +79,7 @@
   border: none;
   outline: 0;
   border-bottom: 1px solid #d9d9d9;
-  width: 300px;
+  width: 320px;
   font-size: 16px;
   line-height: 24px;
   color: #666;
@@ -103,10 +104,10 @@
 }
 
 .login_submit_content {
-  width: 300px;
+  width: 320px;
   height: 40px;
   color: #fff;
-  margin-top: 35px;
+  margin-top: 60px;
 }
 
 .submit_btn {
