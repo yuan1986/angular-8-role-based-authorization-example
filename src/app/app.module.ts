@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './helpers';
 import { HomeComponent } from './home';
-import { AdminComponent } from './admin';
 import { LoginComponent } from './login';
 
 @NgModule({
@@ -17,7 +16,7 @@ import { LoginComponent } from './login';
     HttpClientModule,
     appRoutingModule
   ],
-  declarations: [AppComponent, HomeComponent, AdminComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },

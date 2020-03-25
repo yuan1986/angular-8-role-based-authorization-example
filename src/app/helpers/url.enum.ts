@@ -12,5 +12,11 @@ export enum Url {
   // 查询最多的销售额的产品分类，降序排列
   getSells = 'dataQuery/cotagory/view/sells',
   // 查询某日开始用户留存率
-  getTrend = 'dataQuery/retentionrate/trend'
+  getTrend = 'dataQuery/retentionrate/trend',
+  // 查询用户访问UV
+  getUserUvView = 'dataQuery/userVsitTrend/userUvView',
+  // 查询用户访问PV
+  getUserPvView = 'dataQuery/userVsitTrend/userPvView',
+  // 查询性能耗时
+  getAnalysisTimeView = 'dataQuery/analysisTime/analysisTimeView'
 }
