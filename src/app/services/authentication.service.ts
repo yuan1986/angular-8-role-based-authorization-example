@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '@environments/environment';
 import { User } from '@app/models';
+import { Url } from '@app/helpers';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -24,7 +25,7 @@ export class AuthenticationService {
 
   login(username: string, password: string) {
     return this.http
-      .post<any>(`${environment.apiUrl}/users/authenticate`, {
+      .post<any>(`${environment.apiUrl}${Url.userLogin}`, {
         username,
         password
       })
