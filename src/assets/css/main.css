@@ -19,3 +19,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
 }
+
+a {
+  cursor: pointer;
+}
