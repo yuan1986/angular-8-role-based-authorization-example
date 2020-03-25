@@ -1,0 +1,86 @@
+.logo {
+  float: left !important;
+}
+
+.logo li {
+  width: 100px !important;
+}
+
+.main_top_logo1 {
+  background: url("../images/logo.svg") no-repeat;
+  width: 91px;
+  height: 50px;
+  margin-top: -8px;
+}
+
+.main_top_product {
+  background: url("../images/TEXT1.svg") no-repeat 10px;
+  width: 282px;
+  height: 23px;
+}
+
+.start {
+  background: url("../images/start.svg") no-repeat 10px;
+  padding-left: 25px;
+}
+
+.setting {
+  background: url("../images/setting.svg") no-repeat 10px;
+  padding-left: 32px;
+}
+
+.home_container {
+  padding: 50px;
+}
+
+.nav {
+  float: right;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  float: left;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.nav a {
+  height: 100%;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+}
+
+.top_menu_logo {
+  background: url("../images/logo.svg") no-repeat;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 50px;
+  left: 40px;
+}
+
+.top_menu_title {
+  background: url("../images/TEXT1.svg") no-repeat;
+  height: 50px;
+  width: 290px;
+  position: absolute;
+  top: 60px;
+  left: 150px;
+}
+
+.top_menu_start {
+  background: url("../images/start.svg") no-repeat;
+  height: 16px;
+  width: 50px;
+  font-size: 14px;
+  position: absolute;
+  top: 50px;
+  right: 150px;
+}

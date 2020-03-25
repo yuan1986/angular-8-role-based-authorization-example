@@ -1,16 +1,22 @@
-﻿<div class="card mt-4">
-  <h4 class="card-header">Home</h4>
-  <div class="card-body">
-    <p>You're logged in with Angular 8 & JWT!!</p>
-    <p>
-      Your role is: <strong>{{ currentUser.role }}</strong
-      >.
-    </p>
-    <p>This page can be accessed by <u>all authenticated users</u>.</p>
-    <p class="mb-1">Current user from secure api end point:</p>
-    <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-    <ul *ngIf="userFromApi">
-      <li>{{ userFromApi.firstName }} {{ userFromApi.lastName }}</li>
+﻿<div class="home_container">
+  <div class="nav logo">
+    <ul>
+      <li><div class="main_top_logo1"></div></li>
+      <li><div class="main_top_product"></div></li>
     </ul>
   </div>
+  <div class="nav">
+    <ul>
+      <li>
+        <a class="start">开始运算</a>
+      </li>
+      <li>
+        <a class="setting">系统配置</a>
+      </li>
+      <li>
+        <a (click)="logout()">用户注销</a>
+      </li>
+    </ul>
+  </div>
+  <div class="content"></div>
 </div>
