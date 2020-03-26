@@ -52,10 +52,15 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate([this.returnUrl]);
+          if (!data.success || data.returnData.message === 'failed') {
+            this.error = '用户名或密码不正确。';
+            this.loading = false;
+          } else {
+            this.router.navigate([this.returnUrl]);
+          }
         },
         error => {
-          this.error = error;
+          this.error = '用户名或密码不正确。';
           this.loading = false;
         }
       );
