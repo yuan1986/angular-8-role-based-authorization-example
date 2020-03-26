@@ -1,22 +1,22 @@
 export enum Url {
   // 登录
-  userLogin = 'auth/user/login',
+  userLogin = 'api/auth/user/login',
   // 查询商品预览TOP20
-  getProductView = 'dataQuery/topn/productView',
+  getProductView = 'api/dataQuery/topn/productView',
   // 查询商品加入购物车TOP20
-  getProductAddCart = 'dataQuery/topn/productAddCart',
+  getProductAddCart = 'api/dataQuery/topn/productAddCart',
   // 查询商品销量TOP20
-  getProductPurchase = 'dataQuery/topn/productPurchase',
+  getProductPurchase = 'api/dataQuery/topn/productPurchase',
   // 查询最多的销量的产品分类，降序排列
-  getSellCnts = 'dataQuery/cotagory/view/sellCnts',
+  getSellCnts = 'api/dataQuery/cotagory/view/sellCnts',
   // 查询最多的成交额的产品分类，降序排列
-  getSells = 'dataQuery/cotagory/view/sells',
+  getSells = 'api/dataQuery/cotagory/view/sells',
   // 查询某日开始用户留存率
-  getTrend = 'dataQuery/retentionrate/trend',
+  getTrend = 'api/dataQuery/retentionrate/trend',
   // 查询用户访问UV
-  getUserUvView = 'dataQuery/userVsitTrend/userUvView',
+  getUserUvView = 'api/dataQuery/userVsitTrend/userUvView',
   // 查询用户访问PV
-  getUserPvView = 'dataQuery/dataQuery/event/statistics/info?start_index=0&num=100',
+  getUserPvView = 'api/dataQuery/dataQuery/event/statistics/info?start_index=0&num=100',
   // 查询性能耗时
-  getAnalysisTimeView = 'dataQuery/analysisTime/analysisTimeView'
+  getAnalysisTimeView = 'api/dataQuery/analysisTime/analysisTimeView'
 }
