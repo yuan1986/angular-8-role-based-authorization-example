@@ -9,14 +9,14 @@ export enum Url {
   getProductPurchase = 'dataQuery/topn/productPurchase',
   // 查询最多的销量的产品分类，降序排列
   getSellCnts = 'dataQuery/cotagory/view/sellCnts',
-  // 查询最多的销售额的产品分类，降序排列
+  // 查询最多的成交额的产品分类，降序排列
   getSells = 'dataQuery/cotagory/view/sells',
   // 查询某日开始用户留存率
   getTrend = 'dataQuery/retentionrate/trend',
   // 查询用户访问UV
   getUserUvView = 'dataQuery/userVsitTrend/userUvView',
   // 查询用户访问PV
-  getUserPvView = 'dataQuery/userVsitTrend/userPvView',
+  getUserPvView = 'dataQuery/dataQuery/event/statistics/info?start_index=0&num=100',
   // 查询性能耗时
   getAnalysisTimeView = 'dataQuery/analysisTime/analysisTimeView'
 }
