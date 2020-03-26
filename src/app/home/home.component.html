@@ -1,8 +1,12 @@
 ﻿<div class="home_container">
   <div class="nav logo">
     <ul>
-      <li><div class="main_top_logo1"></div></li>
-      <li><div class="main_top_product"></div></li>
+      <li>
+        <div class="main_top_logo1"></div>
+      </li>
+      <li>
+        <div class="main_top_product"></div>
+      </li>
     </ul>
   </div>
   <div class="nav">
@@ -16,6 +20,36 @@
     </ul>
   </div>
   <div class="content">
+    <div class="turnover-chart-card">
+      <!-- 留存率 -->
+      <div class="retention-chart single-chart-card">
+        <div echarts [options]="retentionOption" class="chart"></div>
+      </div>
+      <!-- 成交额 -->
+      <div class="turnover-pie-left single-chart-card">
+        <div echarts [options]="turnoverOption" class="chart"></div>
+      </div>
+      <div class="turnover-pie-right single-chart-card">
+        <div echarts [options]="turnoverOption" class="chart"></div>
+      </div>
+      <div class="clear">
 
+      </div>
+      <!-- 排行榜 -->
+      <div class="rank-bar single-chart-card">
+        <div>排行榜-TOP20</div>
+        <div class="rank-list">
+          <div> <span>华为mateXS</span></div>
+          <div> <span>华为mateXS</span></div>
+          <div> <span>华为mateXS</span></div>
+          <div> <span>华为mateXS</span></div>
+
+        </div>
+        <div class="rank-list-bar">
+          <div echarts [options]="rankOption" class="rank-list-bar-chart"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>

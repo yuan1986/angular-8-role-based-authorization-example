@@ -84,3 +84,55 @@
   top: 50px;
   right: 150px;
 }
+
+
+
+.retention-chart{
+  margin-bottom: 20px;
+}
+.turnover-chart-card {
+  margin-top: 40px;
+
+  /* background: #442194; */
+  padding: 0 0px;
+}
+
+.turnover-pie-left {
+
+  margin-right: 10px;
+  width: calc(50% - 5px);
+  float: left;
+}
+
+.turnover-pie-right {
+  width: calc(50% - 5px);
+  float: left;
+}
+
+.single-chart-card {
+  background: #FFFFFF;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.20);
+  border-radius: 4px;
+  border-radius: 4px;
+}
+
+.clear {
+  clear: both;
+}
+
+.rank-bar {
+  margin-top: 20px;
+  position: relative;
+}
+
+.rank-list {
+  position: absolute;
+}
+
+.rank-list-bar {
+  margin-left: 200px;
+  height: 800px;
+}
+.rank-list-bar-chart{
+  height: 800px;
+}

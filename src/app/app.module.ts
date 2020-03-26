@@ -8,13 +8,15 @@ import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
+import  {NgxEchartsModule} from 'ngx-echarts';
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    appRoutingModule
+    appRoutingModule,
+    NgxEchartsModule
   ],
   declarations: [AppComponent, HomeComponent, LoginComponent],
   providers: [

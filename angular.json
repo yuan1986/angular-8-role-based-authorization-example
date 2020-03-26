@@ -7,7 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "style": "css"
         }
       },
       "root": "",
@@ -30,7 +30,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              './node_modules/echarts/dist/echarts.min.js'
+            ]
           },
           "configurations": {
             "production": {
