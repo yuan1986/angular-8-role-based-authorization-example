@@ -27,7 +27,4 @@ export class HomeComponent {
     alert(1);
   }
 
-  config() {
-    alert(2);
-  }
 }
