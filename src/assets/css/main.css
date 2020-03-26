@@ -11,7 +11,7 @@ html {
 
 .main-container {
   background-size: cover;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
   background: url("../images/bg.jpg") no-repeat,
     linear-gradient(to right, #6077ec, #6077ec);

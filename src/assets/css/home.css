@@ -55,7 +55,6 @@
   text-decoration: none;
   text-align: center;
   color: #fff;
-  float: right;
 }
 
 .top_menu_logo {
@@ -85,19 +84,19 @@
   top: 50px;
   right: 150px;
 }
-
-.retention-chart {
+.retention-chart{
   margin-bottom: 20px;
 }
 
 .turnover-chart-card {
-  margin-top: 70px;
+  margin-top: 40px;
 
   /* background: #442194; */
   padding: 0 0px;
 }
 
 .turnover-pie-left {
+
   margin-right: 10px;
   width: calc(50% - 5px);
   float: left;
@@ -109,8 +108,8 @@
 }
 
 .single-chart-card {
-  background: #ffffff;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  background: #FFFFFF;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.20);
   border-radius: 4px;
   border-radius: 4px;
 }
@@ -129,9 +128,27 @@
 }
 
 .rank-list-bar {
-  margin-left: 200px;
+  margin-top: 50px;
+  margin-left: 300px;
   height: 800px;
 }
-.rank-list-bar-chart {
+.rank-list-bar-chart{
   height: 800px;
+}
+.rank-bar-title{
+  padding-top: 67px;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 20px;
+  color: rgba(0,0,0,0.85);
+  letter-spacing: -0.25px;
+  line-height: 16px;
+}
+.rank-list{
+  margin-top: 50px;
+  padding-left: 100px;
+  font-size: 18px;
+  color: #333333;
+  letter-spacing: 0;
+  line-height: 40px;
 }
