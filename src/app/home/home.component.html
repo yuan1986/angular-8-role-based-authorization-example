@@ -12,15 +12,23 @@
   <div class="nav">
     <ul>
       <li>
-        <a class="start" (click)="calc()">开始运算</a>
+        <a (click)="init()" class="start">开始运算</a>
       </li>
       <li>
-        <a (click)="logout()">用户注销</a>
+        <a (click)="logout()">注销</a>
       </li>
     </ul>
   </div>
   <div class="content">
     <div class="turnover-chart-card">
+      <!-- UV/PV访问趋势 -->
+      <div class="retention-chart single-chart-card">
+        <div echarts [options]="retentionOption" class="chart"></div>
+      </div>
+      <!-- pv构成情况 -->
+      <div class="retention-chart single-chart-card">
+        <div echarts [options]="pvOption" class="chart"></div>
+      </div>
       <!-- 留存率 -->
       <div class="retention-chart single-chart-card">
         <div echarts [options]="retentionOption" class="chart"></div>
@@ -32,24 +40,20 @@
       <div class="turnover-pie-right single-chart-card">
         <div echarts [options]="turnoverOption" class="chart"></div>
       </div>
-      <div class="clear">
-
-      </div>
+      <div class="clear"></div>
       <!-- 排行榜 -->
       <div class="rank-bar single-chart-card">
         <div>排行榜-TOP20</div>
         <div class="rank-list">
-          <div> <span>华为mateXS</span></div>
-          <div> <span>华为mateXS</span></div>
-          <div> <span>华为mateXS</span></div>
-          <div> <span>华为mateXS</span></div>
-
+          <div><span>华为mateXS</span></div>
+          <div><span>华为mateXS</span></div>
+          <div><span>华为mateXS</span></div>
+          <div><span>华为mateXS</span></div>
         </div>
         <div class="rank-list-bar">
           <div echarts [options]="rankOption" class="rank-list-bar-chart"></div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
