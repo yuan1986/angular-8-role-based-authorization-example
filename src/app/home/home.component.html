@@ -12,7 +12,7 @@
   <div class="nav">
     <ul>
       <li>
-        <a (click)="init()" class="start">开始运算</a>
+        <a (click)="getNewData()" class="start">开始运算</a>
       </li>
       <li>
         <a (click)="logout()">用户注销</a>
@@ -23,6 +23,11 @@
     <div class="turnover-chart-card">
       <!-- UV/PV访问趋势 -->
       <div class="retention-chart single-chart-card">
+        <div>
+          今日UV <span class="retentiond-desc">0</span>
+          &nbsp;&nbsp;&nbsp;
+          今日PV <span class="retentiond-desc-pv">0</span>
+        </div>
         <div echarts [options]="accessOption" class="chart"></div>
       </div>
       <!-- pv构成情况 -->
@@ -37,34 +42,43 @@
       <div class="turnover-pie-left single-chart-card">
         <div echarts [options]="turnoverOption" class="chart"></div>
       </div>
+      <!-- 销量额-->
       <div class="turnover-pie-right single-chart-card">
-        <div echarts [options]="turnoverOption" class="chart"></div>
+        <div echarts [options]="salesOption" class="chart"></div>
       </div>
       <div class="clear"></div>
       <!-- 排行榜 -->
       <div class="rank-bar single-chart-card">
-        <div class="rank-bar-title">排行榜-TOP20</div>
+        <div class="rank-bar-title">
+          排行榜-TOP20
+          <div
+            [ngClass]="{ 'rank-bar-tab-choose': tabNum == 1 }"
+            class="rank-bar-tab rank-bar-tab-first"
+            (click)="tabClick(1)"
+          >
+            销量
+          </div>
+          <div
+            [ngClass]="{ 'rank-bar-tab-choose': tabNum == 2 }"
+            class="rank-bar-tab"
+            (click)="tabClick(2)"
+          >
+            浏览量
+          </div>
+          <div
+            [ngClass]="{ 'rank-bar-tab-choose': tabNum == 3 }"
+            class="rank-bar-tab"
+            (click)="tabClick(3)"
+          >
+            加入购物车
+          </div>
+        </div>
         <div class="rank-list">
-          <div><span class="rank-list-top3-num">1</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-top3-num">2</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-top3-num">3</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">4</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">5</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">6</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">7</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">8</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">9</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">10</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">11</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">12</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">13</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">14</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">15</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">16</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">17</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">18</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">19</span><span class="rank-list-top3-font">华为mateXS</span></div>
-          <div><span class="rank-list-normal-num">20</span><span class="rank-list-top3-font">华为mateXS</span></div>
+          <div *ngFor="let text of rankLengendTextList; let i = index">
+            <span *ngIf="i < 3" class="rank-list-top3-num">{{ i + 1 }}</span>
+            <span *ngIf="i > 2" class="rank-list-normal-num">{{ i + 1 }}</span>
+            <span class="rank-list-top3-font">{{ text }}</span>
+          </div>
         </div>
         <div class="rank-list-bar">
           <div echarts [options]="rankOption" class="rank-list-bar-chart"></div>

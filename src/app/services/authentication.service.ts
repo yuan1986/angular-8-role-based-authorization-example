@@ -1,20 +1,20 @@
-﻿import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { BehaviorSubject, Observable } from "rxjs";
-import { map } from "rxjs/operators";
+﻿import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
-import { environment } from "@environments/environment";
-import { User } from "@app/models";
-import { Url } from "@app/helpers";
+import { environment } from '@environments/environment';
+import { User } from '@app/models';
+import { Url } from '@app/helpers';
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(
-      JSON.parse(localStorage.getItem("currentUser"))
+      JSON.parse(localStorage.getItem('currentUser'))
     );
     this.currentUser = this.currentUserSubject.asObservable();
   }
@@ -31,8 +31,8 @@ export class AuthenticationService {
       })
       .pipe(
         map(user => {
-          if (user && user.success && user.returnData.message !== "failed") {
-            localStorage.setItem("currentUser", JSON.stringify(user));
+          if (user && user.success && user.returnData.message !== 'failed') {
+            localStorage.setItem('currentUser', JSON.stringify(user));
             this.currentUserSubject.next(user);
           }
 
@@ -42,7 +42,7 @@ export class AuthenticationService {
   }
 
   logout() {
-    localStorage.removeItem("currentUser");
+    localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
   }
 }

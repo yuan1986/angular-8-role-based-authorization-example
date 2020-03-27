@@ -20,5 +20,9 @@ export enum Url {
   // 查询性能耗时
   getAnalysisTimeView = 'api/dataQuery/analysisTime/analysisTimeView',
   // PV构建情况
-  getPvInfo = 'api/dataQuery/event/statistics/info?start_index=0&num=30'
+  getPvInfo = 'api/dataQuery/event/statistics/info?start_index=0&num=50',
+  // 查询后台是否正在执行查询。
+  getDataHasQueryed = 'api/dataHandle/dataHasQueryed',
+  // 重新获取数据
+  getRequeryDatas = 'api/dataHandle/requeryDatas'
 }

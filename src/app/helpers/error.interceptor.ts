@@ -3,10 +3,12 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HttpResponse,
+  HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError, finalize, mergeMap, tap } from 'rxjs/operators';
 
 import { AuthenticationService } from '@app/services';
 
@@ -19,15 +21,17 @@ export class ErrorInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
-      catchError(err => {
-        if ([401, 403].indexOf(err.status) !== -1) {
-          this.authenticationService.logout();
-          window.location.reload();
+      tap(
+        event => {
+          if (event instanceof HttpResponse) {
+            if (event.status === 200) {
+            }
+          }
+        },
+        error => {
+          throwError(error.error.message || error.statusText);
         }
-
-        const error = err.error.message || err.statusText;
-        return throwError(error);
-      })
+      )
     );
   }
 }

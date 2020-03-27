@@ -1,3 +1,13 @@
+.home-container {
+  background-size: cover;
+  width: 100%;
+  background: url("../images/bg.jpg") no-repeat,
+    linear-gradient(to right, #6077ec, #6077ec);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 .logo {
   float: left !important;
 }
@@ -187,4 +197,37 @@
 }
 .rank-list-top3-font {
   color: #333333;
+}
+
+.rank-bar-tab {
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 22px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  border-radius: 2px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+
+.rank-bar-tab-first {
+  margin-left: 40px;
+}
+
+.rank-bar-tab-choose {
+  color: #1890ff !important;
+  border: 1px solid #1890ff !important;
+}
+
+.retentiond-desc {
+  position: relative;
+  display: inline-block;
+  top: 42px;
+  left: 250px;
+}
+
+.retentiond-desc-uv, .retentiond-desc-pv {
+  font-weight: bold;
 }
