@@ -114,7 +114,7 @@
 }
 
 .content {
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .clear {
@@ -158,4 +158,33 @@
   color: #333333;
   letter-spacing: 0;
   line-height: 40px;
+}
+.rank-list-top3-num {
+  background-image: url("../images/medal.png");
+  background-size: contain;
+  display: inline-block;
+  margin-right: 20px;
+
+  font-size: 18px;
+  color: #ffffff;
+  letter-spacing: 0;
+
+  width: 28px;
+  height: 28px;
+  line-height: 24px;
+  text-align: center;
+}
+.rank-list-normal-num {
+  display: inline-block;
+  margin-right: 20px;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #999999;
+  letter-spacing: 0;
+  text-align: center;
+}
+.rank-list-top3-font {
+  color: #333333;
 }
